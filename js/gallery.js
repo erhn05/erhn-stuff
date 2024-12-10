@@ -55,17 +55,25 @@ const gallery = document.getElementById('gallery');
 
 // Loop through the imageData array and create a card for each image
 imageData.forEach(data => {
-    // Create a new div for each card
+    // Create a new div for each card (drawing container)
     const drawingContainer = document.createElement('div');
     drawingContainer.classList.add('drawing-container'); // Add the class for styling
 
-    // Create an <img> element
+    // Create an <img> element for the image
     const imgElement = document.createElement('img');
     imgElement.src = data.image;  // Set the image source from the JSON
-    imgElement.alt = data.title;    // Set the alt text from the JSON
+    imgElement.alt = data.title;  // Set the alt text from the JSON
+
+    // Create a div for the title
+    const cardTitle = document.createElement('div');
+    cardTitle.classList.add('card-title');  // Add the class for styling
+    cardTitle.textContent = data.title;    // Set the title text from the JSON
 
     // Append the <img> element to the drawing container
     drawingContainer.appendChild(imgElement);
+
+    // Append the title (cardTitle) to the drawing container
+    drawingContainer.appendChild(cardTitle);
 
     // Append the drawing container to the gallery
     gallery.appendChild(drawingContainer);

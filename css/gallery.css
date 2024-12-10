@@ -17,6 +17,9 @@
     margin: 0;                       /* No margin here because grid handles spacing */
     max-width: 100%;                 /* Set a max width for the card to take full width of the grid cell */
     width: 100%;                    /* Responsive width */
+    display: flex;
+    flex-direction: column;         /* Stack the image and title vertically */
+    align-items: center;            /* Center content horizontally */
 }
 
 /* Image inside the Drawing Container */
@@ -24,18 +27,22 @@
     width: 100%;                    /* Make the image take full width of the container */
     height: auto;                   /* Maintain aspect ratio */
     display: block;                 /* Remove any bottom space/margin */
+    border-bottom: 2px solid #f1f1f1; /* Light border to separate image from title */
+}
+
+/* Title for the Drawing Container (Card) */
+.drawing-container .card-title {
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #232323;
+    font-weight: 600;               /* Slightly bold for emphasis */
+    background-color: #fafafa;      /* Light background for title */
+    width: 100%;                    /* Ensure the title spans the full width of the card */
 }
 
 /* Hover Effect for the Card */
 .drawing-container:hover {
     transform: translateY(-5px);    /* Slight lift effect when hovering */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
-}
-
-/* Optional: Caption/Title (if you want to add some text under the image) */
-.drawing-container .card-title {
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-    color: #333;
 }

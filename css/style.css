@@ -38,6 +38,11 @@ header {
 .site-name {
     font-size: 40px;
     font-weight: 500;
+    letter-spacing: 0em;
+}
+
+.clickable {
+    cursor: pointer;
 }
 
 /* Navigation Links */

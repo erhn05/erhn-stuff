@@ -12,7 +12,7 @@ document.head.innerHTML += headContent;
 // Header content
 const headerContent = `
 <header>
-    <div class="logo-container">
+    <div class="logo-container clickable" onclick="window.location.href='index.html';">
         <img src="images/logo.png" alt="Logo" class="logo">
         <span class="site-name">Erhn Stuff</span>
     </div>
