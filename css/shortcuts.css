@@ -5,7 +5,7 @@ main {
     min-height: 80vh; /* Ensure main takes up the full height of the viewport */
 }
 
-.shortcuts {
+#shortcuts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
@@ -18,19 +18,19 @@ main {
 
 /* Media query for mobile devices (screen width less than 768px) */
 @media (max-width: 768px) {
-    .shortcuts {
+    #shortcuts {
         width: 100%; /* Set width to 100% on smaller screens */
     }
 }
 
-.shortcuts img {
+.shortcut-img {
     width: 200px;
     height: 200px;
     border-radius: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.shortcuts img:hover {
+.shortcuts-img:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
