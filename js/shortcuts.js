@@ -62,14 +62,14 @@ const shortcutData = [
     }
 ];
 
-let cardContent = ""; // Initialize the variable to store all card content
+let shortcutContent = ""; // Initialize the variable to store all shortcut content
 
 // Loop through the shortcutData array and create each image
 shortcutData.forEach(data => {
-    cardContent += `
+    shortcutContent += `
         <a class="shortcut-link" href="${data.url}" target="_blank">
             <img class="shortcut-img" src="${data.imgSrc}" alt="${data.alt}">
         </a>
     `;
-    document.getElementById('shortcuts').innerHTML = cardContent;
+    document.getElementById('shortcuts').innerHTML = shortcutContent;
 });

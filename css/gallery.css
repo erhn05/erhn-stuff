@@ -1,37 +1,41 @@
 /* Gallery Container */
 #gallery {
     display: grid;                  /* Use CSS Grid */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  /* Automatically adjusts columns */
+    grid-template-columns: repeat(auto-fill, 350px);  /* Automatically adjusts columns */
     gap: 20px;                       /* Space between cards */
     padding: 20px;                   /* Padding around the gallery */
-    justify-items: center;           /* Center align the items */
+    justify-items: center;           /* Center align the items horizontally */
+    align-items: center;             /* Center align the items vertically */
+    justify-content: center;         /* Center the grid items horizontally */
+    align-content: center;           /* Center the grid items vertically */
 }
 
-/* Drawing Container Card Style */
-.drawing-container {
+/* Card Container Style */
+.card-container {
     background-color: #fff;         /* White background for the card */
     border-radius: 10px;            /* Rounded corners */
     overflow: hidden;               /* Ensures the image is clipped to the border-radius */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the card effect */
     transition: transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
     margin: 0;                       /* No margin here because grid handles spacing */
-    max-width: 100%;                 /* Set a max width for the card to take full width of the grid cell */
-    width: 100%;                    /* Responsive width */
+    width: 350px;                    /* Responsive width */
     display: flex;
     flex-direction: column;         /* Stack the image and title vertically */
     align-items: center;            /* Center content horizontally */
+    transform-style: preserve-3d;
+    cursor: pointer;                           /* Pointer cursor for interactivity */
 }
 
-/* Image inside the Drawing Container */
-.drawing-container img {
-    width: 100%;                    /* Make the image take full width of the container */
+/* Image inside the Card Container */
+.card-container img {
+    width: 100%;
     height: auto;                   /* Maintain aspect ratio */
     display: block;                 /* Remove any bottom space/margin */
     border-bottom: 2px solid #f1f1f1; /* Light border to separate image from title */
 }
 
-/* Title for the Drawing Container (Card) */
-.drawing-container .card-title {
+/* Title for the Card Container */
+.card-container .card-title {
     padding: 15px 10px;
     text-align: center;
     font-size: 18px;
@@ -41,8 +45,7 @@
     width: 100%;                    /* Ensure the title spans the full width of the card */
 }
 
-/* Hover Effect for the Card */
-.drawing-container:hover {
-    transform: translateY(-5px);    /* Slight lift effect when hovering */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+/* Flip Effect for the Card */
+.card-container.flipped {
+    transform: rotateY(180deg);
 }
